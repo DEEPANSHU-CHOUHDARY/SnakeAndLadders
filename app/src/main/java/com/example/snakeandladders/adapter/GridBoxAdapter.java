@@ -16,10 +16,11 @@ import com.example.snakeandladders.R;
 import com.example.snakeandladders.model.GridBox;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class GridBoxAdapter extends ArrayAdapter<GridBox> {
-    public GridBoxAdapter(@NonNull Context context, ArrayList<GridBox> gridBoxList) {
+    public GridBoxAdapter(@NonNull Context context, List<GridBox> gridBoxList) {
         super(context, 0, gridBoxList);
     }
 
@@ -37,6 +38,8 @@ public class GridBoxAdapter extends ArrayAdapter<GridBox> {
         card.setCardBackgroundColor(gridBox.isGreen() ? Color.GREEN : (gridBox.isRed() ? Color.RED : Color.WHITE));
         if(gridBox.isCurrentPosition()) {
             image.setImageResource(R.drawable.icons8_person_48);
+        } else {
+            image.setImageResource(0);
         }
         return listItemView;
 
